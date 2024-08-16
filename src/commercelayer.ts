@@ -2669,475 +2669,6 @@ const completionSpec: Fig.Spec = {
       ],
     },
     {
-      name: "links",
-      description: "List all the links or the details of a single link",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: ["-a", "--accessToken"],
-          description:
-            "Custom access token to use instead of the one used for login",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-A", "--all"],
-          description: "Show all links instead of first 25 only",
-        },
-        {
-          name: ["-l", "--limit"],
-          description: "Limit number of links in output",
-          args: {},
-        },
-        {
-          name: ["-n", "--name"],
-          description: "The name of the link",
-          args: {},
-        },
-        {
-          name: ["-S", "--link_scope"],
-          description: "The scope of the link",
-          args: {},
-        },
-        {
-          name: ["-s", "--starts"],
-          description: "Look at the description of flag 'expires' for details",
-          args: {},
-        },
-        {
-          name: ["-e", "--expires"],
-          description:
-            "Use the standard iso format with operators [gt, gteq, eq, lt, lteq]",
-          args: {},
-        },
-        {
-          name: "--sort",
-          description: "A comma separated list of fields to sort by",
-          args: {},
-        },
-        {
-          name: ["-L", "--locale"],
-          description: "Show dates in locale time zone and format",
-        },
-        {
-          name: ["-H", "--hide-empty"],
-          description: "Hide empty attributes",
-        },
-      ],
-      args: {
-        name: "id",
-        description: "Unique id of the link to get a single link",
-        isOptional: true,
-      },
-    },
-    {
-      name: ["links:create", "link"],
-      description: "Create a new resource link",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: ["-a", "--accessToken"],
-          description:
-            "Custom access token to use instead of the one used for login",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-t", "--item_type"],
-          description: "The type of the resource for which the link is created",
-          args: {},
-        },
-        {
-          name: ["-i", "--item_id"],
-          description: "The id of the resource for which the link is created",
-          args: {},
-        },
-        {
-          name: ["-I", "--client_id"],
-          description:
-            "The client_id of the application of kind sales_channel to be used with the link",
-          args: {},
-        },
-        {
-          name: "--scope",
-          description: "The application scope",
-          args: {},
-          hidden: true,
-        },
-        {
-          name: ["-S", "--link_scope"],
-          description: "The scope of the link",
-          args: {},
-        },
-        {
-          name: ["-n", "--name"],
-          description: "The name associated to the the link",
-          args: {},
-        },
-        {
-          name: ["-s", "--starts"],
-          description: "Use the standard iso format: https://developer",
-          args: {},
-        },
-        {
-          name: ["-e", "--expires"],
-          description: "Use the standard iso format: https://developer",
-          args: {},
-        },
-        {
-          name: ["-D", "--link_domain"],
-          description: "The domain of the link",
-          args: {
-            default: "c11r.link",
-          },
-        },
-        {
-          name: "--open",
-          description: "Open link in default browser",
-        },
-      ],
-    },
-    {
-      name: "links:delete",
-      description: "Delete an existent resource link",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: ["-a", "--accessToken"],
-          description:
-            "Custom access token to use instead of the one used for login",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-      ],
-      args: {
-        name: "id",
-        description: "The id of the link",
-      },
-    },
-    {
-      name: ["links:details", "links:show", "links:get"],
-      description: "Show link details",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: ["-a", "--accessToken"],
-          description:
-            "Custom access token to use instead of the one used for login",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-H", "--hide-empty"],
-          description: "Hide empty attributes",
-        },
-        {
-          name: ["-L", "--locale"],
-          description: "Show dates in locale time zone and format",
-        },
-      ],
-      args: {
-        name: "id",
-        description: "The id of the link",
-      },
-    },
-    {
-      name: "links:disable",
-      description: "Disable an existing enabled link",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: ["-a", "--accessToken"],
-          description:
-            "Custom access token to use instead of the one used for login",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-      ],
-      args: {
-        name: "id",
-        description: "The id of the link",
-      },
-    },
-    {
-      name: "links:enable",
-      description: "Enable an existend disabled link",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: ["-a", "--accessToken"],
-          description:
-            "Custom access token to use instead of the one used for login",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-      ],
-      args: {
-        name: "id",
-        description: "The id of the link",
-      },
-    },
-    {
-      name: "links:list",
-      description: "List all the created links",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: ["-a", "--accessToken"],
-          description:
-            "Custom access token to use instead of the one used for login",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-A", "--all"],
-          description: "Show all links instead of first 25 only",
-        },
-        {
-          name: ["-l", "--limit"],
-          description: "Limit number of links in output",
-          args: {},
-        },
-        {
-          name: ["-n", "--name"],
-          description: "The name of the link",
-          args: {},
-        },
-        {
-          name: ["-S", "--link_scope"],
-          description: "The scope of the link",
-          args: {},
-        },
-        {
-          name: ["-s", "--starts"],
-          description: "Look at the description of flag 'expires' for details",
-          args: {},
-        },
-        {
-          name: ["-e", "--expires"],
-          description:
-            "Use the standard iso format with operators [gt, gteq, eq, lt, lteq]",
-          args: {},
-        },
-        {
-          name: "--sort",
-          description: "A comma separated list of fields to sort by",
-          args: {},
-        },
-        {
-          name: ["-L", "--locale"],
-          description: "Show dates in locale time zone and format",
-        },
-      ],
-    },
-    {
-      name: "links:open",
-      description: "Open an existent resource link",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: ["-a", "--accessToken"],
-          description:
-            "Custom access token to use instead of the one used for login",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-      ],
-      args: {
-        name: "id",
-        description: "The id of the link",
-      },
-    },
-    {
-      name: "links:resources",
-      description: "Show linkable resources",
-      options: [
-        {
-          name: ["-O", "--open"],
-          description: "Open online documentation page",
-        },
-      ],
-    },
-    {
-      name: "links:update",
-      description: "Create a new resource link",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: ["-a", "--accessToken"],
-          description:
-            "Custom access token to use instead of the one used for login",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-t", "--item_type"],
-          description: "The type of the resource for which the link is created",
-          args: {},
-        },
-        {
-          name: ["-i", "--item_id"],
-          description: "The id of the resource for which the link is created",
-          args: {},
-        },
-        {
-          name: ["-I", "--client_id"],
-          description:
-            "The client_id of the application of kind sales_channel to be used with the link",
-          args: {},
-        },
-        {
-          name: "--scope",
-          description: "The application scope",
-          args: {},
-          hidden: true,
-        },
-        {
-          name: ["-S", "--link_scope"],
-          description: "The scope of the link",
-          args: {},
-        },
-        {
-          name: ["-n", "--name"],
-          description: "The name associated to the the link",
-          args: {},
-        },
-        {
-          name: ["-s", "--starts"],
-          description: "Use the standard iso format: https://developer",
-          args: {},
-        },
-        {
-          name: ["-e", "--expires"],
-          description: "Use the standard iso format: https://developer",
-          args: {},
-        },
-        {
-          name: ["-D", "--link_domain"],
-          description: "The domain of the link",
-          args: {
-            default: "c11r.link",
-          },
-        },
-        {
-          name: "--open",
-          description: "Open link in default browser",
-        },
-      ],
-      args: {
-        name: "id",
-        description: "The id of the link",
-      },
-    },
-    {
       name: "webhooks",
       description:
         "List all the registered webhooks or the details of a single webhook",
@@ -3795,6 +3326,475 @@ const completionSpec: Fig.Spec = {
       args: {
         name: "id",
         description: "Unique id of the order",
+      },
+    },
+    {
+      name: "links",
+      description: "List all the links or the details of a single link",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: ["-a", "--accessToken"],
+          description:
+            "Custom access token to use instead of the one used for login",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-A", "--all"],
+          description: "Show all links instead of first 25 only",
+        },
+        {
+          name: ["-l", "--limit"],
+          description: "Limit number of links in output",
+          args: {},
+        },
+        {
+          name: ["-n", "--name"],
+          description: "The name of the link",
+          args: {},
+        },
+        {
+          name: ["-S", "--link_scope"],
+          description: "The scope of the link",
+          args: {},
+        },
+        {
+          name: ["-s", "--starts"],
+          description: "Look at the description of flag 'expires' for details",
+          args: {},
+        },
+        {
+          name: ["-e", "--expires"],
+          description:
+            "Use the standard iso format with operators [gt, gteq, eq, lt, lteq]",
+          args: {},
+        },
+        {
+          name: "--sort",
+          description: "A comma separated list of fields to sort by",
+          args: {},
+        },
+        {
+          name: ["-L", "--locale"],
+          description: "Show dates in locale time zone and format",
+        },
+        {
+          name: ["-H", "--hide-empty"],
+          description: "Hide empty attributes",
+        },
+      ],
+      args: {
+        name: "id",
+        description: "Unique id of the link to get a single link",
+        isOptional: true,
+      },
+    },
+    {
+      name: ["links:create", "link"],
+      description: "Create a new resource link",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: ["-a", "--accessToken"],
+          description:
+            "Custom access token to use instead of the one used for login",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-t", "--item_type"],
+          description: "The type of the resource for which the link is created",
+          args: {},
+        },
+        {
+          name: ["-i", "--item_id"],
+          description: "The id of the resource for which the link is created",
+          args: {},
+        },
+        {
+          name: ["-I", "--client_id"],
+          description:
+            "The client_id of the application of kind sales_channel to be used with the link",
+          args: {},
+        },
+        {
+          name: "--scope",
+          description: "The application scope",
+          args: {},
+          hidden: true,
+        },
+        {
+          name: ["-S", "--link_scope"],
+          description: "The scope of the link",
+          args: {},
+        },
+        {
+          name: ["-n", "--name"],
+          description: "The name associated to the the link",
+          args: {},
+        },
+        {
+          name: ["-s", "--starts"],
+          description: "Use the standard iso format: https://developer",
+          args: {},
+        },
+        {
+          name: ["-e", "--expires"],
+          description: "Use the standard iso format: https://developer",
+          args: {},
+        },
+        {
+          name: ["-D", "--link_domain"],
+          description: "The domain of the link",
+          args: {
+            default: "c11r.link",
+          },
+        },
+        {
+          name: "--open",
+          description: "Open link in default browser",
+        },
+      ],
+    },
+    {
+      name: "links:delete",
+      description: "Delete an existent resource link",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: ["-a", "--accessToken"],
+          description:
+            "Custom access token to use instead of the one used for login",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+      ],
+      args: {
+        name: "id",
+        description: "The id of the link",
+      },
+    },
+    {
+      name: ["links:details", "links:show", "links:get"],
+      description: "Show link details",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: ["-a", "--accessToken"],
+          description:
+            "Custom access token to use instead of the one used for login",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-H", "--hide-empty"],
+          description: "Hide empty attributes",
+        },
+        {
+          name: ["-L", "--locale"],
+          description: "Show dates in locale time zone and format",
+        },
+      ],
+      args: {
+        name: "id",
+        description: "The id of the link",
+      },
+    },
+    {
+      name: "links:disable",
+      description: "Disable an existing enabled link",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: ["-a", "--accessToken"],
+          description:
+            "Custom access token to use instead of the one used for login",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+      ],
+      args: {
+        name: "id",
+        description: "The id of the link",
+      },
+    },
+    {
+      name: "links:enable",
+      description: "Enable an existend disabled link",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: ["-a", "--accessToken"],
+          description:
+            "Custom access token to use instead of the one used for login",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+      ],
+      args: {
+        name: "id",
+        description: "The id of the link",
+      },
+    },
+    {
+      name: "links:list",
+      description: "List all the created links",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: ["-a", "--accessToken"],
+          description:
+            "Custom access token to use instead of the one used for login",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-A", "--all"],
+          description: "Show all links instead of first 25 only",
+        },
+        {
+          name: ["-l", "--limit"],
+          description: "Limit number of links in output",
+          args: {},
+        },
+        {
+          name: ["-n", "--name"],
+          description: "The name of the link",
+          args: {},
+        },
+        {
+          name: ["-S", "--link_scope"],
+          description: "The scope of the link",
+          args: {},
+        },
+        {
+          name: ["-s", "--starts"],
+          description: "Look at the description of flag 'expires' for details",
+          args: {},
+        },
+        {
+          name: ["-e", "--expires"],
+          description:
+            "Use the standard iso format with operators [gt, gteq, eq, lt, lteq]",
+          args: {},
+        },
+        {
+          name: "--sort",
+          description: "A comma separated list of fields to sort by",
+          args: {},
+        },
+        {
+          name: ["-L", "--locale"],
+          description: "Show dates in locale time zone and format",
+        },
+      ],
+    },
+    {
+      name: "links:open",
+      description: "Open an existent resource link",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: ["-a", "--accessToken"],
+          description:
+            "Custom access token to use instead of the one used for login",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+      ],
+      args: {
+        name: "id",
+        description: "The id of the link",
+      },
+    },
+    {
+      name: "links:resources",
+      description: "Show linkable resources",
+      options: [
+        {
+          name: ["-O", "--open"],
+          description: "Open online documentation page",
+        },
+      ],
+    },
+    {
+      name: "links:update",
+      description: "Create a new resource link",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: ["-a", "--accessToken"],
+          description:
+            "Custom access token to use instead of the one used for login",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-t", "--item_type"],
+          description: "The type of the resource for which the link is created",
+          args: {},
+        },
+        {
+          name: ["-i", "--item_id"],
+          description: "The id of the resource for which the link is created",
+          args: {},
+        },
+        {
+          name: ["-I", "--client_id"],
+          description:
+            "The client_id of the application of kind sales_channel to be used with the link",
+          args: {},
+        },
+        {
+          name: "--scope",
+          description: "The application scope",
+          args: {},
+          hidden: true,
+        },
+        {
+          name: ["-S", "--link_scope"],
+          description: "The scope of the link",
+          args: {},
+        },
+        {
+          name: ["-n", "--name"],
+          description: "The name associated to the the link",
+          args: {},
+        },
+        {
+          name: ["-s", "--starts"],
+          description: "Use the standard iso format: https://developer",
+          args: {},
+        },
+        {
+          name: ["-e", "--expires"],
+          description: "Use the standard iso format: https://developer",
+          args: {},
+        },
+        {
+          name: ["-D", "--link_domain"],
+          description: "The domain of the link",
+          args: {
+            default: "c11r.link",
+          },
+        },
+        {
+          name: "--open",
+          description: "Open link in default browser",
+        },
+      ],
+      args: {
+        name: "id",
+        description: "The id of the link",
       },
     },
     {
@@ -12517,6 +12517,386 @@ const completionSpec: Fig.Spec = {
       ],
     },
     {
+      name: "tags",
+      description: "List all the created tags or show details of a single tag",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: "--accessToken",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-A", "--all"],
+          description: "Show all tags instead of first 25 only",
+        },
+        {
+          name: ["-l", "--limit"],
+          description: "Limit number of tags in output",
+          args: {},
+        },
+      ],
+      args: {
+        name: "id",
+        description: "Unique id of the tag to be retrieved",
+        isOptional: true,
+      },
+    },
+    {
+      name: ["tags:add", "tag"],
+      description: "Add one or more tags to a set of resources",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: "--accessToken",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-n", "--name"],
+          description: "The tag name",
+          args: {},
+          isRequired: true,
+        },
+        {
+          name: ["-t", "--type"],
+          description: "The type of the resource to tag",
+          args: {},
+          isRequired: true,
+        },
+        {
+          name: ["-i", "--id"],
+          description: "The ids of the resources to tag",
+          args: {},
+          isRequired: true,
+        },
+        {
+          name: ["-C", "--create"],
+          description: "Create tags if don't exist",
+          args: {},
+        },
+        {
+          name: ["-v", "--verbose"],
+          description: "Show details of the tag process",
+        },
+      ],
+    },
+    {
+      name: "tags:count",
+      description: "Count resources tagged with a specific tag",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: "--accessToken",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-t", "--type"],
+          description: "The type of the tagged resources",
+          args: {},
+        },
+        {
+          name: ["-z", "--zero"],
+          description: "Show also resources without tags",
+        },
+      ],
+      args: {
+        name: "id_name",
+        description: "Unique id or name of the tag",
+      },
+    },
+    {
+      name: "tags:create",
+      description: "Create one or more new tags",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: "--accessToken",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-n", "--name"],
+          description: "The tag name",
+          args: {},
+          isRequired: true,
+        },
+      ],
+    },
+    {
+      name: "tags:delete",
+      description: "Delete one or more existing tags",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: "--accessToken",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-n", "--name"],
+          description: "The tag name",
+          args: {},
+          isRequired: true,
+        },
+      ],
+    },
+    {
+      name: "tags:details",
+      description: "Show the details of an existing tag",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: "--accessToken",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+      ],
+      args: {
+        name: "id_name",
+        description: "Unique id or name of the tag",
+      },
+    },
+    {
+      name: "tags:list",
+      description: "List all the created tags",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: "--accessToken",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-A", "--all"],
+          description: "Show all tags instead of first 25 only",
+        },
+        {
+          name: ["-l", "--limit"],
+          description: "Limit number of tags in output",
+          args: {},
+        },
+      ],
+    },
+    {
+      name: "tags:remove",
+      description: "Remove one or more tags to a set of resources",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: "--accessToken",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-n", "--name"],
+          description: "The tag name",
+          args: {},
+          isRequired: true,
+        },
+        {
+          name: ["-t", "--type"],
+          description: "The type of the resource to tag",
+          args: {},
+          isRequired: true,
+        },
+        {
+          name: ["-i", "--id"],
+          description: "The ids of th eresources to tag",
+          args: {},
+          isRequired: true,
+        },
+        {
+          name: ["-v", "--verbose"],
+          description: "Show details of the tag process",
+        },
+      ],
+    },
+    {
+      name: "tags:types",
+      description: "Show online documentation for supported resources",
+      options: [
+        {
+          name: ["-O", "--open"],
+          description: "Open online documentation page",
+        },
+      ],
+    },
+    {
+      name: "tags:update",
+      description: "Update an existing tag",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: "--accessToken",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-n", "--name"],
+          description: "The new tag name",
+          args: {},
+          isRequired: true,
+        },
+      ],
+      args: {
+        name: "id_name",
+        description: "Unique id or name of the tag",
+      },
+    },
+    {
+      name: "tags:which",
+      description: "Show all the resources with this tag",
+      options: [
+        {
+          name: ["-o", "--organization"],
+          description: "The slug of your organization",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-d", "--domain"],
+          args: {},
+          hidden: true,
+        },
+        {
+          name: "--accessToken",
+          args: {},
+          isRequired: true,
+          hidden: true,
+        },
+        {
+          name: ["-t", "--type"],
+          description: "The type of the tagged resources",
+          args: {},
+          isRequired: true,
+        },
+        {
+          name: ["-A", "--all"],
+          description: "Show all resources instead of first 25 only",
+        },
+        {
+          name: ["-l", "--limit"],
+          description: "Limit number of resources in output",
+          args: {},
+        },
+      ],
+      args: {
+        name: "id_name",
+        description: "Unique id or name of the tag",
+      },
+    },
+    {
       name: "exports",
       description:
         "List all the created exports or show details of a single export",
@@ -13916,386 +14296,6 @@ const completionSpec: Fig.Spec = {
           isOptional: true,
         },
       ],
-    },
-    {
-      name: "tags",
-      description: "List all the created tags or show details of a single tag",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: "--accessToken",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-A", "--all"],
-          description: "Show all tags instead of first 25 only",
-        },
-        {
-          name: ["-l", "--limit"],
-          description: "Limit number of tags in output",
-          args: {},
-        },
-      ],
-      args: {
-        name: "id",
-        description: "Unique id of the tag to be retrieved",
-        isOptional: true,
-      },
-    },
-    {
-      name: ["tags:add", "tag"],
-      description: "Add one or more tags to a set of resources",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: "--accessToken",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-n", "--name"],
-          description: "The tag name",
-          args: {},
-          isRequired: true,
-        },
-        {
-          name: ["-t", "--type"],
-          description: "The type of the resource to tag",
-          args: {},
-          isRequired: true,
-        },
-        {
-          name: ["-i", "--id"],
-          description: "The ids of the resources to tag",
-          args: {},
-          isRequired: true,
-        },
-        {
-          name: ["-C", "--create"],
-          description: "Create tags if don't exist",
-          args: {},
-        },
-        {
-          name: ["-v", "--verbose"],
-          description: "Show details of the tag process",
-        },
-      ],
-    },
-    {
-      name: "tags:count",
-      description: "Count resources tagged with a specific tag",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: "--accessToken",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-t", "--type"],
-          description: "The type of the tagged resources",
-          args: {},
-        },
-        {
-          name: ["-z", "--zero"],
-          description: "Show also resources without tags",
-        },
-      ],
-      args: {
-        name: "id_name",
-        description: "Unique id or name of the tag",
-      },
-    },
-    {
-      name: "tags:create",
-      description: "Create one or more new tags",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: "--accessToken",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-n", "--name"],
-          description: "The tag name",
-          args: {},
-          isRequired: true,
-        },
-      ],
-    },
-    {
-      name: "tags:delete",
-      description: "Delete one or more existing tags",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: "--accessToken",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-n", "--name"],
-          description: "The tag name",
-          args: {},
-          isRequired: true,
-        },
-      ],
-    },
-    {
-      name: "tags:details",
-      description: "Show the details of an existing tag",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: "--accessToken",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-      ],
-      args: {
-        name: "id_name",
-        description: "Unique id or name of the tag",
-      },
-    },
-    {
-      name: "tags:list",
-      description: "List all the created tags",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: "--accessToken",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-A", "--all"],
-          description: "Show all tags instead of first 25 only",
-        },
-        {
-          name: ["-l", "--limit"],
-          description: "Limit number of tags in output",
-          args: {},
-        },
-      ],
-    },
-    {
-      name: "tags:remove",
-      description: "Remove one or more tags to a set of resources",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: "--accessToken",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-n", "--name"],
-          description: "The tag name",
-          args: {},
-          isRequired: true,
-        },
-        {
-          name: ["-t", "--type"],
-          description: "The type of the resource to tag",
-          args: {},
-          isRequired: true,
-        },
-        {
-          name: ["-i", "--id"],
-          description: "The ids of th eresources to tag",
-          args: {},
-          isRequired: true,
-        },
-        {
-          name: ["-v", "--verbose"],
-          description: "Show details of the tag process",
-        },
-      ],
-    },
-    {
-      name: "tags:types",
-      description: "Show online documentation for supported resources",
-      options: [
-        {
-          name: ["-O", "--open"],
-          description: "Open online documentation page",
-        },
-      ],
-    },
-    {
-      name: "tags:update",
-      description: "Update an existing tag",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: "--accessToken",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-n", "--name"],
-          description: "The new tag name",
-          args: {},
-          isRequired: true,
-        },
-      ],
-      args: {
-        name: "id_name",
-        description: "Unique id or name of the tag",
-      },
-    },
-    {
-      name: "tags:which",
-      description: "Show all the resources with this tag",
-      options: [
-        {
-          name: ["-o", "--organization"],
-          description: "The slug of your organization",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-d", "--domain"],
-          args: {},
-          hidden: true,
-        },
-        {
-          name: "--accessToken",
-          args: {},
-          isRequired: true,
-          hidden: true,
-        },
-        {
-          name: ["-t", "--type"],
-          description: "The type of the tagged resources",
-          args: {},
-          isRequired: true,
-        },
-        {
-          name: ["-A", "--all"],
-          description: "Show all resources instead of first 25 only",
-        },
-        {
-          name: ["-l", "--limit"],
-          description: "Limit number of resources in output",
-          args: {},
-        },
-      ],
-      args: {
-        name: "id_name",
-        description: "Unique id or name of the tag",
-      },
     },
     {
       name: "autocomplete",
